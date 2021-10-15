@@ -33,5 +33,5 @@ if (-not(Test-Path -Path app.asar.orig)) {
 
 cp app.asar.orig app.asar
 asar extract .\app.asar app
-Add-Content app\output\main.js (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+Add-Content app\output\main.js (New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/pd29/oculus-airlink-enabler/main/airlink.js')
 asar pack .\app\ app.asar
