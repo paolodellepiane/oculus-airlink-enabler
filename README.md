@@ -20,7 +20,7 @@
 
 `mv app.asar app.asar.orig`
 
-* edit file %OculusBase%\Support\oculus-client\resourcesapp\output\main.js and add the content of `airlink.js` to the end of file
+* edit file %OculusBase%\Support\oculus-client\resources\app\output\main.js and add the content of `airlink.js` to the end of file
 * recreate the patche app.asar:
 
 `asar pack .\app\ app.asar`
