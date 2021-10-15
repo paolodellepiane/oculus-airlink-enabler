@@ -18,7 +18,7 @@ if (!$?) {
 "checking asar..."
 Get-Command asar
 if (!$?) {
-    npm install --engine-strict asar
+    npm install -g --engine-strict asar
 }
 
 $ErrorActionPreference= 'SilentlyContinue'
