@@ -6,7 +6,7 @@
 * Node 10 or later
 * Asar command line utility
  
-`$ npm install --engine-strict asar`
+`$ npm install -g --engine-strict asar`
 
 # Manual Patch
 #### by using command prompt or powershell:
