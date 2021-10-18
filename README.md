@@ -26,6 +26,6 @@
 `asar pack .\app\ app.asar`
 
 # Automatic Patch
-`patch-oculus-client.ps1` script should automatically install requirements (by using [scoop](https://scoop.sh/)) and apply the patch:
+`patch-oculus-client.ps1` script should automatically install requirements (by using [scoop](https://scoop.sh/)) and apply the patch. Should be run with administrator privileges:
 
 `iwr https://bit.ly/3BQUUwY | iex`
