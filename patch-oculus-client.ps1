@@ -1,29 +1,30 @@
 #!/usr/bin/powershell -Command
 
 "checking scoop..."
-Get-Command scoop
+Get-Command -ErrorAction SilentlyContinue scoop
 if (!$?) {
+    "installing scoop..."
     Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-    Invoke-Expression (New-Object System.Net.WebClient).DownloadFile('https://get.scoop.sh', '.\install-scoop.ps1')
+    Invoke-WebRequest -Uri 'https://get.scoop.sh' -OutFile '.\install-scoop.ps1'
     & .\install-scoop.ps1
     rm install-scoop.ps1
 }
 
 "checking node..."
-Get-Command node
+Get-Command -ErrorAction SilentlyContinue node
 if (!$?) {
+    "installing node..."
     scoop install nodejs
 }
 
 "checking asar..."
-Get-Command asar
+Get-Command -ErrorAction SilentlyContinue asar
 if (!$?) {
+    "installing asar..."
     npm install -g --engine-strict asar
 }
 
-$ErrorActionPreference= 'SilentlyContinue'
-kill -name OculusClient
-$ErrorActionPreference= 'Continue'
+kill -ErrorAction SilentlyContinue -name OculusClient
 
 cd $env:OculusBase\Support\oculus-client\resources
 if (-not(Test-Path -Path app.asar.orig)) {
